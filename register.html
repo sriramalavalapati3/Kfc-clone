@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #navbar{
+            width:100%;
+            height:auto;
+            border:solid 1px black;
+            align-items: center;
+           display: flex;
+           background-color: black;
+           color: white;
+           align-items: center;
+        }
+        #navbar>img{
+width:7%;
+
+
+margin-left: 30px;
+border-radius: 50%;
+
+        }
+        *{ 
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+           
+        }
+        #navbar>ul>li>a{
+           text-decoration: none;
+          color: white;
+        }
+        #navbar>ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        #content>li:nth-child(n){
+margin: 10px;
+font-weight: bold;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+color: white;
+
+
+        }
+       
+        #content>li:nth-child(4)
+        {
+            margin-left: 500px;
+            font-weight: bold;
+        }
+        #content>li:nth-child(3)
+        {
+            text-align: center;
+            margin-left: 400px;
+        }
+        ion-icon {
+  font-size: 25px;
+  margin-top: 10px;
+}
+button{
+    background-color:white
+}
+form{
+  width:20%;
+  height:auto;
+ 
+  margin: auto;
+  margin-top:80px;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+form>input{
+width:100%;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+border: 1px solid white;
+}
+input {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            color:black
+         }
+         input[type="submit"]{
+          width:50%;
+          color:white;
+          background-color: rgb(239, 34, 34);;
+          border-radius: 25px;
+         }
+h1{
+  text-align: center;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <img src="D:\project unit2\painstaking-coach-4141\my logo.png" onclick="openImg()">
+        <ul id="content">
+           <li>  <a href="#">Menu</a></li>
+           <li> <a href="#">Deals</a></li>
+           <li><h1>Steak House</h1></li>
+           <li> <ion-icon name="person"></ion-icon><a href="#">sign in</a></li>
+           <li><button><img src="D:\project unit2\painstaking-coach-4141\iconizer-bucket_cart_icon.svg"></button></li>
+        </ul>
+    </div>
+    <h1>Register Form</h1>
+    <form>
+        <input type="text" id="fstname" placeholder="first name"><br/>
+        <input type="text" id="sndname" placeholder="secondname"><br/>
+        <input type="email"id="email" placeholder="email"><br/>
+        <input type="number"id="mobile" placeholder="mobile"><br/>
+        <input type="password" id="password" placeholder="password"><br/>
+        <input type="password" id="conpassword" placeholder="conform password"><br/>
+        <input type="submit" value="Register"><br/>
+    </form>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",register)
+    let userdata=JSON.parse(localStorage.getItem("user"))||[];
+    let login1=[];
+    function register(event)
+    {
+      event.preventDefault();
+      let firstname=document.querySelector("#fstname").value;
+      let secomdname=document.querySelector("#sndname").value;
+      let email=document.querySelector("#email").value;
+      let mobile=document.querySelector("#mobile").value;
+      let password=document.querySelector("#password").value;
+      let conpass=document.querySelector("#conpassword").value;
+      let login=true;
+      let obj={firstname,secomdname,email,mobile,password,conpass,login}
+      if(password==conpass)
+      {
+        if(firstname!==""||secomdname!=""||email!=""||mobile!=""||password!=""||conpass!="")
+      {
+        userdata.push(obj);
+        login1.push(obj)
+
+localStorage.setItem("user",JSON.stringify(userdata));
+localStorage.setItem("user1",JSON.stringify(login1));
+
+window.location.href="homepage.html";
+
+      }
+      else{
+        alert("fill ur details")
+      }
+      }else{
+        alert("check ur password")
+      }
+      
+
+
+     
+}
+      
+function openImg(){
+    window.location.href="homepage.html";  
+     
+}
+
+
+
+
+
+    
+
+</script>
