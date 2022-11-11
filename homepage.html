@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steak House</title>
+    <style>
+        #navbar{
+            width:100%;
+            height:auto;
+            border:solid 1px black;
+            align-items: center;
+           display: flex;
+           background-color: black;
+           color: white;
+           align-items: center;
+        }
+        #navbar>img{
+width:7%;
+
+
+margin-left: 30px;
+border-radius: 50%;
+
+        }
+        *{ 
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            color: white;
+        }
+        #navbar>ul>li>a{
+           text-decoration: none;
+          color: white;
+        }
+        #navbar>ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        #content>li:nth-child(n){
+margin: 10px;
+font-weight: bold;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+color: white;
+
+
+        }
+       
+        #content>li:nth-child(4)
+        {
+            margin-left: 500px;
+            font-weight: bold;
+        }
+        #content>li:nth-child(3)
+        {
+            text-align: center;
+            margin-left: 400px;
+        }
+        ion-icon {
+  font-size: 25px;
+  margin-top: 10px;
+  color:white
+}
+button{
+    background-color:white;
+    border: 1px solid black;
+}
+#body-1>h1{
+    margin-left:100px;
+    font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+color:white;
+
+
+}
+#body-1{
+    background-color: black;
+    width:100%;
+    height:auto;
+   justify-content: center;
+   display: flex;
+    margin-top: 20px;
+}
+#body-1>button{
+    background-color: red;
+    color:white;
+    width:150px;
+    height:40px;
+    border-radius: 20px;
+}
+        
+    </style>
+    
+</head>
+<body>
+    <div id="navbar">
+        <img src="D:\project unit2\painstaking-coach-4141\my logo.png" onclick="openImg()">
+        <ul id="content">
+           <li>  <a href="#">Menu</a></li>
+           <li> <a href="#">Deals</a></li>
+           <li><h1>Steak House</h1></li>
+           <li> <ion-icon name="person"></ion-icon><a href="#">sign in</a></li>
+           <li><button><img src="D:\project unit2\painstaking-coach-4141\iconizer-bucket_cart_icon.svg"></button></li>
+        </ul>
+    </div>
+    <div id="body-1">
+        <h2>LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN</h2>
+        <button>Start Order</button>
+    </div>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
+
+   <script>
+//    <!-- <script  type="module" src="data.json">
+// import myJson from './data.json' assert {type: 'json'};
+
+// console.log(myJson.CHICKENBUCKETS);
+
+// console.log(myJson.person.name); // 👉️ "Alice"
+// console.log(myJson.person.country); // 👉️ "Austria" -->
+
+
+document.querySelector("#content>li:nth-child(4)>a").addEventListener("click",myfun);
+function myfun(){
+   
+    window.location.href="register.html"
+
+}
+
+function openImg(){
+    window.location.href="homepage.html";
+}
+function Account(){
+    let login=JSON.parse(localStorage.getItem("user1"))
+    if(login.length==0)
+    {
+        document.querySelector("#content>li:nth-child(4)>a").innerText=signin;  
+    }else
+    {
+        document.querySelector("#content>li:nth-child(4)>a").innerText=login[0].firstname;
+    }
+    
+}
+Account()
+
+   </script>
+
+
