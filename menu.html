@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steak House.Menu</title>
+    <style>
+        .sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 25%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color:white; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 50px;
+  margin-top: 100px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+        #navbar{
+            width:100%;
+            height:auto;
+            border:solid 1px black;
+            align-items: center;
+           display: flex;
+           background-color: black;
+           color: white;
+           align-items: center;
+        }
+        #navbar>img{
+width:7%;
+
+
+margin-left: 30px;
+border-radius: 50%;
+
+        }
+        *{ 
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+           font-weight: bold;
+        }
+        #navbar>ul>li>a{
+           text-decoration: none;
+          color: white;
+        }
+        #navbar>ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        #content>li:nth-child(n){
+margin: 10px;
+font-weight: bold;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+color: white;
+
+
+        }
+       
+        #content>li:nth-child(4)
+        {
+            margin-left: 500px;
+            font-weight: bold;
+        }
+        #content>li:nth-child(3)
+        {
+            text-align: center;
+            margin-left: 400px;
+        }
+        ion-icon {
+  font-size: 25px;
+  margin-top: 10px;
+}
+button{
+    background-color:white;
+    border: 1px solid black;
+} 
+
+    #cont{
+        display:flex;
+        width: 100%;
+        height:auto;
+        justify-content: space-around;
+    }
+    #box1{
+        margin-top: 80px;
+        width:35%;
+        height:auto;
+        border: 1px solid black;
+        text-align: center;
+        margin-right: 10px;
+
+    }
+    #box1>ul{
+    margin-top: 80px;
+    list-style:none;
+    
+    line-height: 40px;
+    
+    
+}
+#box1>ul>li>a{
+    text-decoration: none;
+    color: black;
+}
+#box2{
+width:70%;
+height:auto;
+border: 1px solid red;
+margin-top: 80px;
+margin-left:35%;
+}
+#CHICKENBUCKETS>div{
+    justify-content: space-evenly;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows:  repeat(auto,200px);
+    gap:40px
+    
+}
+#CHICKENBUCKETS>div>div>img,#NEWLAUNCH>div>div>img,#BIRYANIBUCKETS>div>div>img,#BoxMeals>div>div>img,#Beverages>div>div>img{
+    width:100%;
+    
+}
+#CHICKENBUCKETS>div,#NEWLAUNCH>div,#BIRYANIBUCKETS>div,#BoxMeals>div,#Beverages>div{
+    line-height: 1.5;
+   
+
+
+
+
+border:1px solid black
+
+}
+html{
+    scroll-behavior: smooth;
+}
+#CHICKENBUCKETS>div>p,#NEWLAUNCH>div>p,#BIRYANIBUCKETS>div>p,#BoxMeals>div>p,#Beverages>div>p{
+font-size:10px
+}
+#NEWLAUNCH>div,#BIRYANIBUCKETS>div,#BoxMeals>div,#Beverages>div{
+    justify-content: space-evenly;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto,200px);
+    gap:10px
+}
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <img src="D:\project unit2\painstaking-coach-4141\my logo.png" onclick="openImg()">
+        <ul id="content">
+           <li>  <a href="#">Menu</a></li>
+           <li> <a href="#">Deals</a></li>
+           <li><h1>Steak House</h1></li>
+           <li> <ion-icon name="person"></ion-icon><a href="#">sign in</a></li>
+           <li><button><img src="D:\project unit2\painstaking-coach-4141\iconizer-bucket_cart_icon.svg"></button></li>
+        </ul>
+    </div>
+    <div id="cont">
+        <div id="box1" class="sidenav">
+            <img style="width: 10%;margin-right: 200px;"src="https://online.kfc.co.in/static/media/Stripes_Small_OffersIcon.87fc6256.svg">
+            <h1>SH MENU</h1>
+            <ul>
+                <li><a href="#CHICKENBUCKETS"><h3>CHICKEN BUCKETS</h3></a></li>
+                <li><a href="#NEWLAUNCH"><h3>NEW LAUNCH</h3></a></li>
+                <li><a href="#BIRYANIBUCKETS"><h3>BIRYANI BUCKETS</h3></a></li>
+                <li><a href="#BoxMeals"><h3>BOX MEALS</h3></a></li>
+                <li><h3>BURGERS</h3></li>
+                <li><h3>SNACKS</h3></li>
+                <li><a href="#Beverages"><h3>BEVERAGES</h3></a></li>
+            </ul>
+        </div>
+       
+        <div id="box2">
+            <input oninput="search()" type="text" placeholder="search products" id="search">
+            <div id="CHICKENBUCKETS">
+                <h1>CHICKENBUCKETS</h1>
+               <div>
+
+               </div>
+            </div>
+            <div id="NEWLAUNCH">
+                <h1>NEWLAUNCH</h1>
+                <div></div>
+            </div>
+            <div id="BIRYANIBUCKETS">
+                <h1>BIRYANIBUCKETS</h1>
+                <div>
+
+                </div>
+            </div>
+            <div id="BoxMeals" >
+                <h1>Box Meals</h1>
+                <div>
+
+                </div>
+            </div>
+            <div id="BURGERS"></div>
+            <div id="Snacks"></div>
+            <div id="Beverages">
+                <h1>BEVERAGES</h1>
+               <div>
+
+               </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+   
+    let CHICKENBUCKETS=[
+    {
+        Item:"Peri Peri 10 Strips with Dynamite",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=22.01",
+        price:639,
+        des:"10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle" 
+    }
+    ,
+    {
+        Item:"Bucket for Two",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000892.jpg?ver=22.01",
+        price:599,
+        des:"Flat Rs. 115 off on combo of 2pc Hot & Crispy, 2 pc Smoky Red Chicken & Large Popcorn"   
+    }
+    ,
+    {
+        Item:"Peri Peri 10 Strips with Nashville",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002154.jpg?ver=22.01",
+        price:600,
+        des:"10 Spicy Peri Peri chicken strips & our Nashville Hot Sauce Bottle"   
+    }
+    ,
+    {
+        Item:"Peri Peri 10 Leg pc & 4 Dips",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002155.jpg?ver=22.01",
+        price:924,
+        des:"Leg before any wicket! Save 27% on 10 Spicy Peri Peri Leg Pieces & 4 Dips"   
+    }
+    ,
+    {
+        Item:"Peri Peri 5 Leg Pc Meal",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002156.jpg?ver=22.01",
+        price:628,
+        des:"5 Spicy Peri Peri Leg Pieces, 2 Dips, 1 Med Fries & a Pepsi PET" 
+    }
+    ,
+    {
+        Item:"Peri Peri 5 Leg Pc & 2 Dips",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002157.jpg?ver=22.01",
+      price:515,
+        des:"5 Spicy Peri Peri Leg Pieces, paired with 2 delicous dips"   
+    }
+    ,
+    {
+        Item:"Big 12",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000854.jpg?ver=22.01",
+        price:720,
+        des:"Save 28% on 6pc Hot & Crispy Chicken, 6 Hot Wings & 2 dips"  
+    }
+    ,
+    {
+        Item:"Ultimate Savings Bucket",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000638.jpg?ver=22.01",
+    
+        price:700,
+        des:"Save 33% on signature bucket of 4pc Hot & crispy, 6 Wings, 4 strips, 2 Dips & Pepsi PET"  
+    }
+    ,
+    {
+        Item:"5pc Smoky Red Chicken",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000638.jpg?ver=22.01",
+        price:500,
+        des:"Flat 20% off on 5pc Smoky red grilled chicken"  
+    }
+]
+let newlaunch=[
+{
+    Item:"Peri Peri 10 Strips with Dynamite",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002153.jpg?ver=22.01",
+    price:640,
+    des:"10 Spicy Peri Peri chicken strips & our Dynamite Spicy Mayo Sauce Bottle"
+},
+{
+    Item:"Peri Peri 10 Strips with Nashville",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002154.jpg?ver=22.01",
+    price:640,
+    des:"10 Spicy Peri Peri chicken strips & our Nashville Hot Sauce Bottle"
+},
+{
+    Item:"Peri Peri 10 Leg pc & 4 Dips",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002155.jpg?ver=22.01",
+    price:620,
+    des:"Leg before any wicket! Save 27% on 10 Spicy Peri Peri Leg Pieces & 4 Dips"
+},
+{
+    Item:"Peri Peri 5 Leg Pc Meal",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002156.jpg?ver=22.01",
+    price:630,
+    des:"5 Spicy Peri Peri Leg Pieces, 2 Dips, 1 Med Fries & a Pepsi PET"
+},
+{
+    Item:"Mega Feast",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002123.jpg?ver=22.01",
+    price:700,
+    des:"Feast up with 2 Hot & Crispy, 2 Smoky Red Chicken, 1 Bun, 1 Rice & gravy, Med Fries & Pepsi PET"
+},
+{
+    Item:"Peri Peri 5 leg",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002157.jpg?ver=22.01",
+    price:500,
+    des:"5 Spicy Peri Peri Leg Pieces, paired with 2 delicous dips"
+},
+{
+    Item:"6pc Hot & Crispy with Dynamite Sauce",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002093.jpg?ver=22.01",
+    price:740,
+    des:"6pc Hot & Crispy Chicken paired with our new Dynamite Spicy Mayo Sauce Bottle"
+},
+{
+    Item:"Peri Peri 6pc Chicken Strips",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002158.jpg?ver=22.01",
+    price:400,
+    des:"6pc Hot & Crispy Chicken paired with our new Nashville Hot Pepper Sauce Bottle"
+},
+{
+    Item:"6pc Hot & Crispy with Nashville Sauce",
+    img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002094.jpg?ver=22.01",
+    price:800,
+    des:"6pc Hot & Crispy Chicken paired with our new Nashville Hot Pepper Sauce Bottle"
+}
+]
+ let BIRYANIBUCKETS=[
+    {
+        Item:"Classic Biryani Combo",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002166.jpg?ver=22.01",
+        price:700,
+        des:"Large portions of Biryani rice with 2 pc Hot & Crispy, 2 Gravies, 4 Strips & Pepsi PET"
+    }
+    ,
+    {
+        Item:"Smoky Grilled Biryani Combo",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002017.jpg?ver=22.01",
+        price:740,
+        des:"Large portions of Biryani rice with 2 pc Smoky Red, 2 Gravies, Med Popcorn & Pepsi PET"
+    }
+    ,
+    {
+        Item:"Popcorn Biryani Combo",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002052.jpg?ver=22.01",
+        price:800,
+        des:"Large portions of Biryani & Chicken Popcorn, 2 Spicy Gravies, 4pc Wings & Pepsi PET"
+    }
+    ,
+    {
+        Item:"Classic Chicken Biryani Bucket (Large)",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K626.jpg?ver=22.01",
+        price:240,
+        des:"Hyderabadi style Biryani rice served with 1 pc Hot & Crispy & Spicy Gravy"
+    }
+    ,
+    {
+        Item:"Popcorn Chicken Biryani Bucket",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K628.jpg?ver=22.01",
+        price:290,
+        des:"Hyderabadi style Biryani rice served with Popcorn & Spicy Gravy"
+    }
+    ,
+    {
+        Item:"Smoky Grilled Biryani Bucket",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K628.jpg?ver=22.01",
+        price:290,
+        des:"Hyderabadi style Biryani rice served with 1 pc Smoky Red & Spicy Gravy"
+    }
+    ,
+ ]
+ let Box=[
+    {
+        Item:"All Chicken Box",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00002167.jpg?ver=22.01",
+        price:190,
+        des:"A Box with your favorites! Get 1 pc Hot & Crispy, 2 Hot Wings & 1 Chicken Strip at a deal price"
+    },
+    {
+        Item:"Zinger Tandoori Box",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00001003.jpg?ver=22.01",
+        price:320,
+        des:"A deal for the Tandoori lovers : Get 1 Tandoori Zinger, 2 Hot Wings, 1 Veg Patty & Pepsi"
+    },
+    {
+        Item:"Popcorn Biryani Box",
+        img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00001039.jpg?ver=22.01",
+        price:330,
+        des:"Biryani lovers unite : Get 1 Popcorn Biryani Bucket with gravy, 2 Hot Wings & Pepsi"
+    },
+ ]
+ let Beverages=[
+    {
+Item:"Pepsi PET",
+img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K350.jpg?ver=22.01",
+price:30,
+des:"Pepsi PET"
+
+    },
+    {
+Item:"Pepsi Can 330 ml",
+img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K485.jpg?ver=22.01",
+price:40,
+des:"Pepsi Can 330 ml"
+
+    },
+    {
+Item:"7UP Can 330 ml",
+img:"https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K487.jpg?ver=22.01",
+price:50,
+des:"7UP Can 330 ml"
+
+    },
+  
+ ]
+ let obj={
+        CHICKENBUCKETS,
+        newlaunch,
+        BIRYANIBUCKETS,
+        Box,
+        Beverages
+    }
+   
+ localStorage.setItem("chickenbuckets",JSON.stringify(CHICKENBUCKETS))
+ localStorage.setItem("NewLauch",JSON.stringify(newlaunch))
+ localStorage.setItem("Biryani",JSON.stringify(BIRYANIBUCKETS))
+ localStorage.setItem("Box",JSON.stringify(Box))
+ localStorage.setItem("drinks",JSON.stringify(Beverages))
+ let chickenbuckets =JSON.parse(localStorage.getItem("chickenbuckets"))||[];
+ let Newlauch=JSON.parse(localStorage.getItem("newLaunch"))||[];
+ let Biryani =JSON.parse(localStorage.getItem("Biryani"))||[];
+ let box =JSON.parse(localStorage.getItem("Box"))||[];
+ let Drinks =JSON.parse(localStorage.getItem("drinks"))||[];
+ display(chickenbuckets)
+ function display(data){
+    data.forEach(ele => {
+        let box=document.createElement("div")
+        let item=document.createElement("h2")
+        item.innerText=ele.Item
+        let img=document.createElement("img")
+        img.setAttribute("src",ele.img)
+        let price=document.createElement("h4")
+        price.innerText="₹"+ele.price
+        let des=document.createElement("p");
+        des.innerText=ele.des
+        
+      
+        box.append(img,item,price,des)
+        document.querySelector("#CHICKENBUCKETS>div").append(box)
+    });
+}
+    displayne(newlaunch)
+    function displayne(data){
+    data.forEach(elem => {
+        let box=document.createElement("div")
+        let item=document.createElement("h2")
+        item.innerText=elem.Item
+        let img=document.createElement("img")
+        img.setAttribute("src",elem.img)
+        let price=document.createElement("h4")
+        price.innerText="₹"+elem.price
+        let des=document.createElement("p");
+        des.innerText=elem.des
+        
+      
+        box.append(img,item,price,des)
+        document.querySelector("#NEWLAUNCH>div").append(box)
+    });
+}
+
+displaynex(Biryani)
+function displaynex(data){
+    data.forEach(elem => {
+        let box=document.createElement("div")
+        let item=document.createElement("h2")
+        item.innerText=elem.Item
+        let img=document.createElement("img")
+        img.setAttribute("src",elem.img)
+        let price=document.createElement("h4")
+        price.innerText="₹"+elem.price
+        let des=document.createElement("p");
+        des.innerText=elem.des
+        
+      
+        box.append(img,item,price,des)
+        document.querySelector("#BIRYANIBUCKETS>div").append(box)
+    });
+}
+displaynext(box)
+function displaynext(data){
+    data.forEach(elem => {
+        let box=document.createElement("div")
+        let item=document.createElement("h2")
+        item.innerText=elem.Item
+        let img=document.createElement("img")
+        img.setAttribute("src",elem.img)
+        let price=document.createElement("h4")
+        price.innerText="₹"+elem.price
+        let des=document.createElement("p");
+        des.innerText=elem.des
+        
+      
+        box.append(img,item,price,des)
+        document.querySelector("#BoxMeals>div").append(box)
+    });
+}
+function displaynex(data){
+    data.forEach(elem => {
+        let box=document.createElement("div")
+        let item=document.createElement("h2")
+        item.innerText=elem.Item
+        let img=document.createElement("img")
+        img.setAttribute("src",elem.img)
+        let price=document.createElement("h4")
+        price.innerText="₹"+elem.price
+        let des=document.createElement("p");
+        des.innerText=elem.des
+        
+      
+        box.append(img,item,price,des)
+        document.querySelector("#BIRYANIBUCKETS>div").append(box)
+    });
+}
+displaynextd(Drinks)
+function displaynextd(Drinks){
+    Drinks.forEach(elem => {
+        let box=document.createElement("div")
+        let item=document.createElement("h2")
+        item.innerText=elem.Item
+        let img=document.createElement("img")
+        img.setAttribute("src",elem.img)
+        let price=document.createElement("h4")
+        price.innerText="₹"+elem.price
+        let des=document.createElement("p");
+        des.innerText=elem.des
+        
+      
+        box.append(img,item,price,des)
+        document.querySelector("#Beverages>div").append(box)
+    });
+}
+function search(){
+    let q=document.querySelector("#search").value
+    let newdata=[];
+    for(let x in obj)
+    { 
+        for(let i=0;i<obj[x].obj[x].x[i].length;i++)
+        {
+        if(obj[x].x[i].Item.toLowerCase()==(q.toLowerCase()))
+        {
+console.log(obj[x].x[i].Item)
+        }
+        }
+       
+        newdata.push(arr)
+    }
+    document.querySelector("#box2").innerHTML=""
+    
+   
+ function display(data){
+    data.forEach(ele => {
+        let box=document.createElement("div")
+        let item=document.createElement("h2")
+        item.innerText=ele.Item
+        let img=document.createElement("img")
+        img.setAttribute("src",ele.img)
+        let price=document.createElement("h4")
+        price.innerText="₹"+ele.price
+        let des=document.createElement("p");
+        des.innerText=ele.des
+        
+      
+        box.append(img,item,price,des)
+        document.querySelector("#CHICKENBUCKETS>div").append(box)
+    });
+}
+
+}
+ 
+  
+ 
+
+</script>
