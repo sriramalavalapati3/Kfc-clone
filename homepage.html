@@ -39,6 +39,9 @@ border-radius: 50%;
             flex-direction: row;
             list-style: none;
         }
+        #navbar>ul>li>a:hover  {
+  font-size: 20px;
+}
         #content>li:nth-child(n){
 margin: 10px;
 font-weight: bold;
@@ -98,13 +101,13 @@ color:white;
 </head>
 <body>
     <div id="navbar">
-        <img src="D:\project unit2\painstaking-coach-4141\my logo.png" onclick="openImg()">
+        <img src="D:\painstaking-coach-4141\my logo.png" onclick="openImg()">
         <ul id="content">
            <li>  <a href="#">Menu</a></li>
            <li> <a href="#">Deals</a></li>
            <li><h1>Steak House</h1></li>
            <li> <ion-icon name="person"></ion-icon><a href="#">sign in</a></li>
-           <li><button><img src="D:\project unit2\painstaking-coach-4141\iconizer-bucket_cart_icon.svg"></button></li>
+           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
         </ul>
     </div>
     <div id="body-1">
@@ -116,13 +119,6 @@ color:white;
 </html>
 
    <script>
-//    <!-- <script  type="module" src="data.json">
-// import myJson from './data.json' assert {type: 'json'};
-
-// console.log(myJson.CHICKENBUCKETS);
-
-// console.log(myJson.person.name); // 👉️ "Alice"
-// console.log(myJson.person.country); // 👉️ "Austria" -->
 
 
 document.querySelector("#content>li:nth-child(4)>a").addEventListener("click",myfun);
