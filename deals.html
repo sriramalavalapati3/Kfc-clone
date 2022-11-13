@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deals</title>
+<style>        #navbar{
+    width:100%;
+    height:auto;
+    border:solid 1px black;
+    align-items: center;
+   display: flex;
+   background-color: black;
+   color: white;
+   align-items: center;
+   position:fixed;
+   overflow: hidden;
+  top:0;
+}
+body::-webkit-scrollbar {
+display: none;
+}
+#navbar>img{
+width:7%;
+
+
+margin-left: 30px;
+border-radius: 50%;
+
+}
+*{ 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color: white;
+}
+#navbar>ul>li>a{
+   text-decoration: none;
+  color: white;
+}
+#navbar>ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+#navbar>ul>li>a:hover  {
+font-size: 15px;
+}
+#content>li:nth-child(n){
+margin: 10px;
+font-weight: bold;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+color: white;
+
+
+}
+
+#content>li:nth-child(4)
+{
+    margin-left: 500px;
+    font-weight: bold;
+}
+#content>li:nth-child(3)
+{
+    text-align: center;
+    margin-left: 400px;
+}
+ion-icon {
+font-size: 25px;
+margin-top: 10px;
+color:white
+}
+button{
+background-color:white;
+border: 1px solid black;
+list-style: none;
+}
+button>a{
+background-color:black;
+text-decoration: none;
+}
+#body-1>h1{
+    margin-left:100px;
+    font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+color:white;
+
+
+}
+#body-1{
+    background-color: black;
+    width:100%;
+    height:auto;
+   justify-content: center;
+   display: flex;
+    margin-top: 98px;
+}
+#body-1>button{
+    background-color: red;
+    color:white;
+    width:150px;
+    height:40px;
+    border-radius: 20px;
+}
+#body-1>h1{
+    margin-left:100px;
+    font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+color:white;
+
+
+}
+</style>
+           
+</head>
+<body>
+    <div id="navbar">
+        <img src="D:\painstaking-coach-4141\my logo.png">
+        <ul id="content">
+           <li>  <a href="menu.html">Menu</a></li>
+           <li> <a href="#">Deals</a></li>
+           <li><h1>STEAK HOUSE</h1></li>
+           <li> <button style="background-color:black"><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li>
+           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
+        </ul>
+    </div> 
+    <div id="body-1">
+        <h2>LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN</h2>
+        <button>Start Order</button>
+    </div>
+</body>
+</html>

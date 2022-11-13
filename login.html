@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="register.css">
     <style>
           #navbar{
             width:100%;
@@ -67,18 +68,18 @@ button{
     background-color:white
 }
 form{
-  width:30%;
+  width:20%;
   height:auto;
-  background-color: black;
+ 
   margin: auto;
   margin-top:80px;
   text-align: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 form>input{
-width:60%;
+width:100%;
 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-border: 1px solid black;
+border: 1px solid white;
 }
 input {
             width: 100%;
@@ -96,89 +97,58 @@ input {
 h1{
   text-align: center;
 }
-form>img{
-  width:25%;
- 
-}
-form>h1{
-  color:white;
-}
     </style>
 </head>
-
 <body>
     <div id="navbar">
         <img src="D:\painstaking-coach-4141\my logo.png" onclick="openImg()">
         <ul id="content">
-           <li>  <a href="#">Menu</a></li>
+           <li>  <a href="menu.html">Menu</a></li>
            <li> <a href="#">Deals</a></li>
            <li><h1>Steak House</h1></li>
-           
-           
+           <li> <ion-icon name="person"></ion-icon><a href="#">sign in</a></li>
+           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
         </ul>
     </div>
-   
-    <form>
-      <img src="D:\painstaking-coach-4141\my logo.png">
-      <h1>Register Form</h1>
-
-        <input type="text" id="fstname" placeholder="first name"><br/>
-        <input type="text" id="sndname" placeholder="secondname"><br/>
-        <input type="email"id="email" placeholder="email"><br/>
-        <input type="number"id="mobile" placeholder="mobile"><br/>
-        <input type="password" id="password" placeholder="password"><br/>
-        <input type="password" id="conpassword" placeholder="conform password"><br/>
-        <input type="submit" value="Register"><br/>
-    </form>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <div class="cont">
+       
+        <form>
+            <h2>Login</h2>
+            <label for="">Enter Your Email</label><br />
+            <input type="email" value="" placeholder="Enter your Email" id="Email"><br />
+           
+            <label for="">Enter Your PassWord</label><br />
+            <input type="password" value="" placeholder="Enter Your PassWord" id="Password"><br />
+          
+            <input type="submit" value="login">
+        </form>  
+        <h1></h1>
 </body>
 </html>
 <script>
-    document.querySelector("form").addEventListener("submit",register)
-    let userdata=JSON.parse(localStorage.getItem("user"))||[];
-    let login1=[];
-    function register(event)
-    {
-      event.preventDefault();
-      let firstname=document.querySelector("#fstname").value;
-      let secomdname=document.querySelector("#sndname").value;
-      let email=document.querySelector("#email").value;
-      let mobile=document.querySelector("#mobile").value;
-      let password=document.querySelector("#password").value;
-      let conpass=document.querySelector("#conpassword").value;
-      let login=true;
-      let obj={firstname,secomdname,email,mobile,password,conpass,login}
-      if(password==conpass)
-      {
-        if(firstname!==""||secomdname!=""||email!=""||mobile!=""||password!=""||conpass!="")
-      {
-        userdata.push(obj);
-       
+     document.querySelector("form").addEventListener("submit",myfun);
+   let login=[];
+        let arr=[];
+    function myfun(event){
+        event.preventDefault();
 
-localStorage.setItem("user",JSON.stringify(userdata));
+let email=document.querySelector("#Email").value;
 
-
-window.location.href="login.html";
-
-      }
-      else{
-        alert("fill ur details")
-      }
-      }else{
-        alert("check ur password")
-      }
-     
+let password=document.querySelector("#Password").value;
+let obj={
+    email,
+    password,
 }
-      
-function openImg(){
-    window.location.href="homepage.html";  
-     
-}
+  
 
-
-
-
-
-    
-
+     let user=JSON.parse(localStorage.getItem("userdata"))
+     user.forEach(ele => {
+        if(ele.email===obj.email&&ele.password===obj.password)
+        {
+            login1.push(obj)
+            localStorage.setItem("user1",JSON.stringify(login1));
+           window.location.href="homepage.html"
+        }
+     });
+    }
 </script>

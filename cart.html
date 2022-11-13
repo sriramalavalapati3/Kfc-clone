@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                #navbar{
+            width:100%;
+            height:auto;
+            border:solid 1px black;
+            align-items: center;
+           display: flex;
+           background-color: black;
+           color: white;
+           align-items: center;
+           position:fixed;
+           overflow: hidden;
+          top:0;
+        }
+        body::-webkit-scrollbar {
+  display: none;
+}
+        #navbar>img{
+width:7%;
+
+
+margin-left: 30px;
+border-radius: 50%;
+
+        }
+        *{ 
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+           
+        }
+        #navbar>ul>li>a{
+           text-decoration: none;
+          color: white;
+        }
+        #navbar>ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+        }
+        #navbar>ul>li>a:hover  {
+  font-size: 15px;
+}
+        #content>li:nth-child(n){
+margin: 10px;
+font-weight: bold;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fira Sans', sans-serif;
+color: white;
+
+
+        }
+       
+        #content>li:nth-child(4)
+        {
+            margin-left: 450px;
+            font-weight: bold;
+        }
+        #content>li:nth-child(3)
+        {
+            text-align: center;
+            margin-left: 400px;
+        }
+        ion-icon {
+  font-size: 25px;
+  margin-top: 10px;
+  color:white
+}
+button{
+    background-color:white;
+    border: 1px solid black;
+    list-style: none;
+}
+button>a{
+    background-color:black;
+text-decoration: none;
+}
+table{
+    margin-top: 200px;
+    color: black;
+    width:80%;
+    height:auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+table>thead
+{
+    font-weight: 700;
+}
+table>tbody>tr>td>img{
+    width:30%
+}
+table>tbody>tr>td>button{
+    background-color: red;
+    color:white;
+    border-radius: 20px;
+    width:50px
+}
+table>tbody>tr>td>button:hover{
+    background-color:black 
+}
+
+#content>li:nth-child(3)>h1,
+#content>li:nth-child(4)>button>a{
+    color: white;
+}
+tbody>tr>td{
+  
+    text-align: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+thead{
+    background-color: black;;
+    color:white;
+    text-align: center;
+}
+tbody>tr>td:nth-child(1)
+{
+    width:100px
+}
+thead>th>td:nth-child(1)
+{
+    width:100px
+}
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <div id="navbar">
+        <img src="D:\painstaking-coach-4141\my logo.png" onclick="openImg()">
+        <ul id="content">
+           <li>  <a href="menu.html">Menu</a></li>
+           <li> <a href="#">Deals</a></li>
+           <li><h1>STEAK HOUSE</h1></li>
+           <li> <button style="background-color:black;color:white"><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li>
+           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
+        </ul>
+    </div>
+
+   <div>
+    <table>
+        <thead>
+            <tr>
+                <th>Remove</th>
+                <th>image</th>
+                <th>Item</th>
+                <th>price</th>
+                <th>quantity</th>
+            </tr>
+        </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</div>
+    
+</body>
+</html>
+<script>
+   
+    
+    let cartdata=JSON.parse(localStorage.getItem("cartdata"))||[];
+    display(cartdata)
+   function display(cartdata)
+   {
+    var count=1;
+    document.querySelector("tbody").innerHTML="";
+    cartdata.forEach((ele,index) => {
+        let box=document.createElement("tr");
+        let td1=document.createElement("td");
+        var image = document.createElement('img');
+        image.setAttribute("src",ele.img);
+        td1.appendChild(image);
+        let td5=document.createElement("td")
+        var button = document.createElement('button');
+button.innerText="Remove";
+button.addEventListener("click",function(){
+cartdata.splice(index,1);
+localStorage.setItem("cart",JSON.stringify(cartdata))
+display(cartdata)
+})
+   td5.append(button)
+  
+        let td2=document.createElement("td");
+        td2.innerText=ele.Item
+        let td3=document.createElement("td");
+        td3.innerText= "₹"+ele.price
+        
+        let td4=document.createElement("td");
+        let button1=document.createElement("button");
+        button1.innerText="+"
+      button1.addEventListener("click",function(){
+       count++ 
+       s.innerText=count
+    cal(count)
+      })
+        let button2=document.createElement("button");
+      button2.innerText="-"
+      button2.addEventListener("click",function(){
+        if(count>1)
+        {
+          count--;
+          s.innerText=count
+         cal(count)
+        }
+    });
+    let s=document.createElement("span");
+      s.innerText=count
+       
+        td4.append(button1,s,button2)
+        box.append(td5,td1,td2,td3,td4);
+        document.querySelector("tbody").append(box)
+    });
+    cal(count)
+   }
+   function cal(count){
+    var total=0;
+cartdata.forEach(ele=>{
+    total=total+(ele.price*count)
+})
+console.log(total)
+   }
+   cal()
+</script>
