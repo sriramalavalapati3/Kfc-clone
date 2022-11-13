@@ -209,10 +209,11 @@ h1{
         <img src="D:\painstaking-coach-4141\my logo.png" onclick="openImg()">
         <ul id="content">
            <li>  <a href="menu.html">Menu</a></li>
-           <li> <a href="#">Deals</a></li>
+           <li> <a href="deals.html">Deals</a></li>
            <li><h1>STEAK HOUSE</h1></li>
-           <li> <button style="background-color:black"><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li>
-           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
+          
+           <li> <button style="background-color:black"><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li><div></div>
+           <li><button id="cartbutton"><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
         </ul>
     </div>
     <div id="body-1">
@@ -304,14 +305,13 @@ h1{
 
    <script>
 
-document.querySelector("#body-3>div:nth-child(n)").addEventListener("click",fun)
-document.querySelector("#content>li:nth-child(4)>a").addEventListener("click",myfun);
-function myfun(){
-   
-    window.location.href="register.html"
+document.querySelector("#body-3>div:nth-child(1)").addEventListener("click",fun);
+document.querySelector("#body-3>div:nth-child(2)").addEventListener("click",fun);
+document.querySelector("#body-3>div:nth-child(3)").addEventListener("click",fun);
+document.querySelector("#body-3>div:nth-child(4)").addEventListener("click",fun);
+document.querySelector("#body-3>div:nth-child(5)").addEventListener("click",fun);
 
-}
-document.querySelector("#content>li:nth-child(4)>a").addEventListener("click",myfun);
+document.querySelector("#content>li:nth-child(4)>button>a").addEventListener("click",myfun);
 function myfun(){
    
     window.location.href="register.html"
@@ -319,29 +319,51 @@ function myfun(){
 }
 
 function openImg(){
-    window.location.href="homepage.html";
+    window.location.href="index.html";
 }
 function openImg1(){
     window.location.href="menu.html"
 }
+let login=JSON.parse(localStorage.getItem("user"))
+let n=login.length
 function Account(){
-    let login=JSON.parse(localStorage.getItem("user1"))
+   
+   
     if(login.length==0)
     {
-        document.querySelector("#content>li:nth-child(4)>a").innerText=signin;  
+        document.querySelector("#content>li:nth-child(4)>button>a").innerText=signin;  
     }else
     {
-        document.querySelector("#content>li:nth-child(4)>a").innerText=login[0].firstname;
+        document.querySelector("#content>li:nth-child(4)>button>a").innerText=login[n-1].firstname;
        
     }
     
 }
+if(login.length==1)
+{
+   
+  let logout=document.createElement("button");
+  logout.addEventListener("click",logou)
+  function logou(){
+    login.splice(n-1,1)
+    localStorage.setItem("user",JSON.stringify("login"))
+ document.querySelector("#content>li:nth-child(4)").innerHTML=""
+let btn= document.querySelector("#content>li:nth-child(4)")
+btn.append(logout)
+  }
+
+   }
+
 Account()
 function fun(){
     open('menu.html');
    location.href = ('#chickenbuckets');
 }
 
+document.querySelector("#cartbutton").addEventListener("click",cart)
+    function cart(){
+        window.location.href="cart.html"
+    }
 
 
 

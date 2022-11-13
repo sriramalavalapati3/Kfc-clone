@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="register.css">
+   
     <style>
           #navbar{
             width:100%;
@@ -141,14 +141,18 @@ let obj={
 }
   
 
-     let user=JSON.parse(localStorage.getItem("userdata"))
-     user.forEach(ele => {
+     let userdata=JSON.parse(localStorage.getItem("user"))
+     console.log(userdata)
+     userdata.forEach(ele => {
         if(ele.email===obj.email&&ele.password===obj.password)
         {
-            login1.push(obj)
-            localStorage.setItem("user1",JSON.stringify(login1));
-           window.location.href="homepage.html"
+            login.push(obj)
+            localStorage.setItem("user1",JSON.stringify(login));
+           window.location.href="index.html"
         }
      });
     }
+    function openImg(){
+    window.location.href="index.html";
+}
 </script>
