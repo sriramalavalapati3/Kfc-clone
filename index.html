@@ -214,6 +214,8 @@ h1{
           
            <li> <button style="background-color:black"><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li><div></div>
            <li><button id="cartbutton"><img src="./iconizer-bucket_cart_icon (1).svg"></button></li>
+
+      
         </ul>
     </div>
     <div id="body-1">
@@ -260,7 +262,11 @@ h1{
             </div>
     </div>
     <div id="footer">
+
         <div><img src="./my logo.png"></div>
+
+        
+
         <div><ul>
             <li>KFC Food</li>
             <li>Menu</li>
@@ -305,6 +311,7 @@ h1{
 
    <script>
 
+
 document.querySelector("#body-3>div:nth-child(1)").addEventListener("click",fun);
 document.querySelector("#body-3>div:nth-child(2)").addEventListener("click",fun);
 document.querySelector("#body-3>div:nth-child(3)").addEventListener("click",fun);
@@ -312,6 +319,8 @@ document.querySelector("#body-3>div:nth-child(4)").addEventListener("click",fun)
 document.querySelector("#body-3>div:nth-child(5)").addEventListener("click",fun);
 
 document.querySelector("#content>li:nth-child(4)>button>a").addEventListener("click",myfun);
+
+
 function myfun(){
    
     window.location.href="register.html"
@@ -324,6 +333,7 @@ function openImg(){
 function openImg1(){
     window.location.href="menu.html"
 }
+
 let login=JSON.parse(localStorage.getItem("user"))
 let n=login.length
 function Account(){
@@ -335,10 +345,12 @@ function Account(){
     }else
     {
         document.querySelector("#content>li:nth-child(4)>button>a").innerText=login[n-1].firstname;
+
        
     }
     
 }
+
 if(login.length==1)
 {
    
@@ -354,16 +366,19 @@ btn.append(logout)
 
    }
 
+
 Account()
 function fun(){
     open('menu.html');
    location.href = ('#chickenbuckets');
 }
 
+
 document.querySelector("#cartbutton").addEventListener("click",cart)
     function cart(){
         window.location.href="cart.html"
     }
+
 
 
 
