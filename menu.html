@@ -148,9 +148,9 @@ margin-left:35%;
     justify-content: space-evenly;
     display:grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows:  repeat(auto,200px);
+    grid-template-rows: auto;
   
-    gap:40px
+    gap:30px
     
 }
 #CHICKENBUCKETS>div>div>img,#NEWLAUNCH>div>div>img,#BIRYANIBUCKETS>div>div>img,#BoxMeals>div>div>img,#Beverages>div>div>img{
@@ -186,6 +186,8 @@ font-size:10px
 div::-webkit-scrollbar{
     display: none;
 }
+
+
 
     </style>
       <style>
@@ -238,18 +240,20 @@ div::-webkit-scrollbar{
       #box2>input{
         margin-top: 100px;
       }
-
+#box2>div{
+    background-color: #f1f1f1;
+}
     </style>
 </head>
 <body>
     <div id="navbar">
-        <img src="D:\painstaking-coach-4141\my logo.png" onclick="openImg()">
+        <img src="./my logo.png" onclick="openImg()">
         <ul id="content">
            <li>  <a href="menu.html">Menu</a></li>
            <li> <a href="deals.html">Deals</a></li>
            <li><h1>STEAK HOUSE</h1></li>
            <li> <ion-icon name="person"></ion-icon><a href="#">sign in</a></li>
-           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
+           <li><button id="cartbutton"><img src="./iconizer-bucket_cart_icon (1).svg"></button></li>
         </ul>
     </div>
     <div id="cont">
@@ -261,9 +265,10 @@ div::-webkit-scrollbar{
                 <li><a href="#ch2"><h3>NEW LAUNCH</h3></a></li>
                 <li><a href="#BIRYANIBUCKETS"><h3>BIRYANI BUCKETS</h3></a></li>
                 <li><a href="#BoxMeals"><h3>BOX MEALS</h3></a></li>
+                <li><a href="#Beverages"><h3>BEVERAGES</h3></a></li>
                 <li><h3>BURGERS</h3></li>
                 <li><h3>SNACKS</h3></li>
-                <li><a href="#Beverages"><h3>BEVERAGES</h3></a></li>
+                
             </ul>
         </div>
        
@@ -291,18 +296,19 @@ div::-webkit-scrollbar{
 
                 </div>
             </div>
-            <div id="BURGERS"></div>
-            <div id="Snacks"></div>
             <div id="Beverages">
                 <h1>BEVERAGES</h1>
                <div>
 
                </div>
             </div>
+            <div id="BURGERS"></div>
+            <div id="Snacks"></div>
+            
         </div>
     </div>
     <div id="footer">
-        <div><img src="D:\painstaking-coach-4141\my logo.png"></div>
+        <div><img src="./my logo.png"></div>
         <div><ul>
             <li>KFC Food</li>
             <li>Menu</li>
@@ -577,7 +583,8 @@ des:"7UP Can 330 ml"
  let Newlauch=JSON.parse(localStorage.getItem("newLaunch"))||[];
  let Biryani =JSON.parse(localStorage.getItem("Biryani"))||[];
  let box =JSON.parse(localStorage.getItem("Box"))||[];
- let Drinks =JSON.parse(localStorage.getItem("drinks"))||[];
+ let drinks =JSON.parse(localStorage.getItem("drinks"))||[];
+ 
  display(chickenbuckets)
  function display(data){
     data.forEach(ele => {
@@ -590,7 +597,7 @@ des:"7UP Can 330 ml"
         price.innerText="₹"+ele.price
         let des=document.createElement("p");
         des.innerText=ele.des
-        let button=document.createElement("button");
+        var button=document.createElement("button");
         button.innerText="Add to cart"
         button.addEventListener("click",function(){
             if(cart.length==0)
@@ -622,6 +629,7 @@ des:"7UP Can 330 ml"
         document.querySelector("#CHICKENBUCKETS>div").append(box)
     });
 }
+
     displayne(newlaunch)
     function displayne(data){
     data.forEach(elem => {
@@ -634,7 +642,7 @@ des:"7UP Can 330 ml"
         price.innerText="₹"+elem.price
         let des=document.createElement("p");
         des.innerText=elem.des
-        let button=document.createElement("button");
+        var button=document.createElement("button");
         button.innerText="Add to cart"
         button.addEventListener("click",function(){
             if(cart.length==0)
@@ -680,7 +688,7 @@ function displaynex(data){
         price.innerText="₹"+elem.price
         let des=document.createElement("p");
         des.innerText=elem.des
-        let button=document.createElement("button");
+        var button=document.createElement("button");
         button.innerText="Add to cart"
         button.addEventListener("click",function(){
             if(cart.length==0)
@@ -725,7 +733,7 @@ function displaynext(data){
         price.innerText="₹"+elem.price
         let des=document.createElement("p");
         des.innerText=elem.des
-        let button=document.createElement("button");
+        var button=document.createElement("button");
         button.innerText="Add to cart"
         button.addEventListener("click",function(){
             if(cart.length==0)
@@ -757,8 +765,9 @@ function displaynext(data){
         document.querySelector("#BoxMeals>div").append(box)
     });
 }
-function displaynex(data){
-    data.forEach(elem => {
+displaytext(drinks)
+function displaytext(data){
+    data.forEach((elem) => {
         let box=document.createElement("div")
         let item=document.createElement("h2")
         item.innerText=elem.Item
@@ -768,7 +777,7 @@ function displaynex(data){
         price.innerText="₹"+elem.price
         let des=document.createElement("p");
         des.innerText=elem.des
-        let button=document.createElement("button");
+        var button=document.createElement("button");
         button.innerText="Add to cart"
         button.addEventListener("click",function(){
             if(cart.length==0)
@@ -791,102 +800,44 @@ function displaynex(data){
             localStorage.setItem("cartdata",JSON.stringify(cart))
 
            }else{
-           
             alert("already in cart");
            }  
             }
             
         })
         box.append(img,item,price,des,button)
-        document.querySelector("#BIRYANIBUCKETS>div").append(box)
+        document.querySelector("#Beverages>div").append(box)
     });
 }
-displaynextd(Drinks)
-function displaynextd(Drinks){
-    Drinks.forEach(elem => {
-        let box=document.createElement("div")
-        let item=document.createElement("h2")
-        item.innerText=elem.Item
-        let img=document.createElement("img")
-        img.setAttribute("src",elem.img)
-        let price=document.createElement("h4")
-        price.innerText="₹"+elem.price
-        let des=document.createElement("p");
-        des.innerText=elem.des
-        let button=document.createElement("button");
-        button.innerText="Add to cart" 
-        button.addEventListener("click",function(){
-            cart.push(elem) 
-            localStorage.setItem("cartdata",JSON.stringify(cart))
-        })
-        if(cart.length==0)
-            {
-                cart.push(elem);
-            localStorage.setItem("cartdata",JSON.stringify(cart)) 
-            }else{
-                for(let i=0;i<cart.length;i++)
-           {
-            var count=0;
-           
-            if(cart[i].id===elem.id)
-            {
-                count++
-            }
-           }
-           if(count==0)
-           {
-            cart.push(elem);
-            localStorage.setItem("cartdata",JSON.stringify(cart))
 
-           }else{
-            
-            alert("already in cart");
-           }  
-            }
-            
-        })
-}
-function search(){
-    let q=document.querySelector("#search").value
-    let newdata=[];
-    for(let x in obj)
-    { 
-        for(let i=0;i<obj[x].obj[x].x[i].length;i++)
-        {
-        if(obj[x].x[i].Item.toLowerCase()==(q.toLowerCase()))
-        {
-console.log(obj[x].x[i].Item)
-        }
-        }
+
        
-        newdata.push(arr)
-    }
-    document.querySelector("#box2").innerHTML=""
     
-   
- function display(data){
-    data.forEach(ele => {
-        let box=document.createElement("div")
-        let item=document.createElement("h2")
-        item.innerText=ele.Item
-        let img=document.createElement("img")
-        img.setAttribute("src",ele.img)
-        let price=document.createElement("h4")
-        price.innerText="₹"+ele.price
-        let des=document.createElement("p");
-        des.innerText=ele.des
-        
-      
-        box.append(img,item,price,des)
-        document.querySelector("#CHICKENBUCKETS>div").append(box)
-    });
-}
 
-}
+
+
  
 function openImg(){
-    window.location.href="homepage.html";
+    window.location.href="index.html";
 }
-
+document.querySelector("#cartbutton").addEventListener("click",cartbutton)
+    function cartbutton(){
+        window.location.href="cart.html"
+    }
+    let login=JSON.parse(localStorage.getItem("user"))
+let n=login.length
+function Account(){
+   
+   
+    if(login.length==0)
+    {
+        document.querySelector("#content>li:nth-child(4)>a").innerText=signin;  
+    }else
+    {
+        document.querySelector("#content>li:nth-child(4)>a").innerText=login[n-1].firstname;
+       
+    }
+    
+}
 
 </script>

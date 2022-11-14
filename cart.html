@@ -130,17 +130,18 @@ thead>th>td:nth-child(1)
     width:100px
 }
     </style>
+   
 </head>
 <body>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <div id="navbar">
-        <img src="D:\painstaking-coach-4141\my logo.png" onclick="openImg()">
+        <img src="./my logo.png" onclick="openImg()">
         <ul id="content">
            <li>  <a href="menu.html">Menu</a></li>
-           <li> <a href="#">Deals</a></li>
+           <li> <a href="deals.html">Deals</a></li>
            <li><h1>STEAK HOUSE</h1></li>
            <li> <button style="background-color:black;color:white"><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li>
-           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
+           <li><button><img src="./iconizer-bucket_cart_icon (1).svg"></button></li>
         </ul>
     </div>
 
@@ -183,7 +184,7 @@ thead>th>td:nth-child(1)
 button.innerText="Remove";
 button.addEventListener("click",function(){
 cartdata.splice(index,1);
-localStorage.setItem("cart",JSON.stringify(cartdata))
+localStorage.setItem("cartdata",JSON.stringify(cartdata))
 display(cartdata)
 })
    td5.append(button)
@@ -228,4 +229,7 @@ cartdata.forEach(ele=>{
 console.log(total)
    }
    cal()
+   function openImg(){
+    window.location.href="index.html";
+}
 </script>

@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deals</title>
-<style>        #navbar{
+<style> 
+       #navbar{
     width:100%;
     height:auto;
     border:solid 1px black;
@@ -33,7 +34,7 @@ border-radius: 50%;
     margin:0;
     padding:0;
     box-sizing: border-box;
-    color: white;
+   
 }
 #navbar>ul>li>a{
    text-decoration: none;
@@ -90,6 +91,9 @@ color:white;
 
 
 }
+#body>h2{
+    color:white
+}
 #body-1{
     background-color: black;
     width:100%;
@@ -114,23 +118,247 @@ color:white;
 
 
 }
+
+#body-2{
+    width:100%;
+    height: 150px;
+    background-color: aliceblue;
+    color:black;
+}
+#body-1>h2{
+    color:white;
+    margin-top: 40px;
+    margin-left: 300px;
+}
+#body-3{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap:10px
+}
+
+
+.container {
+  position:static;
+  box-sizing: border-box;
+}
+
+
+.text-block {
+  position:relative;
+ bottom: 250px;
+  right: 10px;
+
+  left: 10px;
+  color:white;
+ padding-left: 30px;
+ padding-top: 50px;
+  font-size: 10px;
+}
+.text-block>button{
+margin-left: 80px;
+background-color: black;
+color: white;
+width:80px;
+height:35px;
+border-radius: 20px;
+border: 1px solid white;
+
+}
+.text-block>button:hover{
+    background-color:white;
+color: black;
+
+}
+
+
+
+
+
 </style>
-           
+<style>
+    #footer{
+        display: flex;
+        justify-content: space-evenly;
+        width:100%;
+        height: auto;
+        background-color: black;
+        z-index: 2;
+        margin-top: 100px;
+    }
+    #footer>div{
+        width:20%;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+    }
+    #footer>div:nth-child(1)>img{
+        width:25%;
+        margin:90px;
+    }
+    #footer>div>ul{
+        line-height: 2;
+        list-style: none;
+
+    }
+    #footer>div>ul>li:hover,#footer>div:nth-child(6)>a:hover{
+        font-size: 15px;
+    }
+    #footer>div:nth-child(7)>img{
+        width:15%;  
+        margin:10px 0px;
+    }
+    #footer>div:nth-child(6),#footer>div:nth-child(6)>a
+    {
+        padding-top:40px;
+        color: white;
+    }
+    #feet{
+        width:100%;
+        height: auto;
+        background-color: black;
+        color: white;
+       
+    }
+    #box2>div{
+        margin-top: 80px;
+    }
+  #box2>input{
+    margin-top: 100px;
+  }
+ .offer>h2{
+color: red;
+  }
+.offer>div{
+    display:flex;
+    justify-content: space-around;
+}
+.offer>div>button{
+    background-color: black;
+color: white;
+width:80px;
+height:35px;
+border-radius: 20px;
+}
+#body-3{
+    margin-top: 0px;
+}
+.offer>div>button:hover{
+    background-color:white;
+color: black;
+}
+.offer>div>a{
+    color:black
+}
+.offer>div>a:hover{
+    font-size: 20px;
+}
+</style>      
 </head>
 <body>
     <div id="navbar">
-        <img src="D:\painstaking-coach-4141\my logo.png">
+        <img src="./my logo.png" onclick="openImg()">
         <ul id="content">
            <li>  <a href="menu.html">Menu</a></li>
-           <li> <a href="#">Deals</a></li>
+           <li> <a href="deals.html">Deals</a></li>
            <li><h1>STEAK HOUSE</h1></li>
-           <li> <button style="background-color:black"><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li>
-           <li><button><img src="D:\painstaking-coach-4141\iconizer-bucket_cart_icon (1).svg"></button></li>
+           <li> <button style="background-color:black" ><ion-icon name="person"></ion-icon><a href="register.html">sign in</a></button></li><div></div>
+           <li><button id="cartbutton"><img src="./iconizer-bucket_cart_icon (1).svg"></button></li>
         </ul>
-    </div> 
+    </div>
     <div id="body-1">
         <h2>LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN</h2>
         <button>Start Order</button>
     </div>
+    <img src="./banner.png" style="width:100% ;">
+    <div id="body-2">
+        <img style="width: 3%;margin-left:250px;margin-top: 20px;"src="https://online.kfc.co.in/static/media/Stripes_Small_OffersIcon.87fc6256.svg">
+        <h1>OFFERS FOR YOU</h1>
+    </div>
+    
+    <div id="body-3">
+        <div class="container">
+            <img src="https://online.kfc.co.in/static/media/Native_select%20a%20kfc_grey%20image.6e97ff02.svg" alt="Norway" style="width:100%;">
+     <div class="text-block">
+        <h2>SELECT A KFC TO SEE LOCAL OFFERS</h2>
+        <button>Find KYC</button>
+     </div> 
+           
+        </div>
+        <div class="offer">
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/ADDCHK99.jpg"style="width:100%;">;
+            <h2>Add 2 Pc Hot n Crispy Chicken @ just Rs 99 on min cart value of Rs 499 or more.</h2>
+            <div style="display:flex;margin-top:30px" id="offer">
+                <a href="#">view details</a>
+                <button>Reedem</button>
+            </div>
+        </div>
+        <div class="offer">
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/ADDCHK99.jpg"style="width:100%;">;
+            <h2>Add 2 Pc Hot n Crispy Chicken @ just Rs 99 on min cart value of Rs 499 or more.</h2>
+            <div style="display:flex;margin-top:30px" id="offer">
+                <a href="#">view details</a>
+                <button>Reedem</button>
+            </div>
+        </div>
+        <div class="offer">
+            <img src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/xl/ADDCHK99.jpg"style="width:100%;">;
+            <h2>Add 2 Pc Hot n Crispy Chicken @ just Rs 99 on min cart value of Rs 499 or more.</h2>
+            <div style="display:flex;margin-top:30px" id="offer">
+                <a href="#">view details</a>
+                <button>Reedem</button>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div><img src="./my logo.png"></div>
+        <div><ul>
+            <li>KFC Food</li>
+            <li>Menu</li>
+            <li>Order Lookup</li>
+            <li>Gift Card</li>
+            <li>Nutrition & Allergen</li>
+        </ul></div>
+        <div><ul>
+            <li>Support</li>
+            <li>Get Help</li>
+            <li>Contact Us</li>
+            <li>KFC Feedback</li>
+            <li>Privacy Policy</li>
+        </ul></div>
+        <div><ul>
+            <li>Legal</li>
+            <li>Terms and Conditions</li>
+            <li>Privacy Policy</li>
+            <li>Disclaimer</li>
+            <li>Caution Notice</li>
+        </ul></div>
+        <div><ul>
+            <li>KFC India</li>
+            <li>About KFC</li>
+            <li>KFC Care</li>
+            <li>Careers</li>
+            <li>Our Golden Past</li>
+        </ul></div>
+       <div>
+        <img src="https://images.ctfassets.net/wtodlh47qxpt/6qgKpWUOIsrIiazhk3cdmF/d60b4c20be69bab1f939bf33348b67e9/Find_KFC.svg"><a href="#">Find a KFC</a>
+       </div>
+       <div>
+        <img src="data:image/png;base64,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">
+       </div>
+
+    </div>
+    <div id="feet">
+        <h4>Copyright © KFC Corporation 2021 All Rights Reserved</h4>
+    </div>
 </body>
 </html>
+<script>
+    document.querySelector("#cartbutton").addEventListener("click",cart)
+    function cart(){
+        window.location.href="cart.html"
+    }
+    function openImg(){
+    window.location.href="index.html";
+}
+</script>
